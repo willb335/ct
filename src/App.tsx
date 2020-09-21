@@ -29,7 +29,7 @@ const Container = styled.div`
 
 const ScaleContainer = styled.div`
   position: absolute;
-  top: 25%;
+  top: 27%;
   left: 10%;
 
   @media (max-width: 1200px) {
@@ -115,9 +115,7 @@ export const App: FunctionComponent = () => {
   return (
     <>
       <Container>
-        <h3 style={{ color: 'white' }}>
-          2017 Connecticut Personal Income Tax by Town
-        </h3>
+        <h3>2017 Connecticut Personal Income Tax by Town</h3>
       </Container>
       <CT data={data} colorScale={colorScale} setCurrentTown={setCurrentTown} />
 
