@@ -27,6 +27,23 @@ const Container = styled.div`
   height: 100%;
 `;
 
+const ScaleContainer = styled.div`
+  position: absolute;
+  top: 27%;
+  left: 10%;
+
+  @media (max-width: 1200px) {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+  }
+`;
+
 export const App: FunctionComponent = () => {
   const [currentTown, setCurrentTown] = useState<CurrentTownData | null>(null);
   const [currentScale, setCurrentScale] = useState<string | null>(null);
@@ -98,9 +115,7 @@ export const App: FunctionComponent = () => {
   return (
     <>
       <Container>
-        <h3 style={{ color: 'white' }}>
-          2017 Connecticut Personal Income Tax by Town
-        </h3>
+        <h3>2017 Connecticut Personal Income Tax by Town</h3>
       </Container>
       <CT data={data} colorScale={colorScale} setCurrentTown={setCurrentTown} />
 
@@ -110,14 +125,14 @@ export const App: FunctionComponent = () => {
         </ReactTooltip>
       )}
 
-      <Container>
+      <ScaleContainer>
         {currentScale && (
           <ReactTooltip data-for="scale">
             <ScaleTooltip townFills={townFills} currentScale={currentScale} />
           </ReactTooltip>
         )}
         <Scale setCurrentScale={setCurrentScale} />
-      </Container>
+      </ScaleContainer>
     </>
   );
 };
