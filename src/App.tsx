@@ -35,7 +35,7 @@ export const App: FunctionComponent = () => {
 
   useEffect(() => {
     // https://data.ct.gov/Tax-and-Revenue/Personal-Income-Tax-By-Town/pvqv-e235
-    csv('/Personal_Income_Tax_By_Town.csv').then(
+    csv(`${process.env.PUBLIC_URL}/Personal_Income_Tax_By_Town.csv`).then(
       (towns: DSVRowArray<string>): void => {
         const filtered: DSVRowString[] = towns?.filter(
           (d) => d['Tax Year'] === '2017'
