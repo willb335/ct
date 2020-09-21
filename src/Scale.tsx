@@ -21,13 +21,16 @@ const ScaleContainer = styled.div<{ size: number }>`
   position: relative;
   display: block;
   background: #dcdcdc;
-  height: ${(props) => `${props.size / range.length - 1}px`};
+  height: 50px;
+  max-height: ${(props) => `${props.size / range.length - 1}px`};
 `;
 
 const StyledScale = styled.div<{ size: number; fill: string }>`
   display: inline-block;
-  width: ${(props) => `${(props.size / range.length - 1) * 0.9}px`};
-  height: ${(props) => `${props.size / range.length - 1}px`};
+  width: 50px;
+  height: 50px;
+  max-width: ${(props) => `${(props.size / range.length - 1) * 0.9}px`};
+  max-height: ${(props) => `${props.size / range.length - 1}px`};
   background-color: ${(props) => props.fill};
 `;
 
