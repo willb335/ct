@@ -23,7 +23,7 @@ const ScaleContainer = styled.div<{ size: number }>`
   background: #dcdcdc;
   height: auto;
   max-height: auto;
-  outline: 1px solid #303030;
+  outline: 1px solid #696969;
 
   @media (max-width: 1200px) {
     height: 50px;
