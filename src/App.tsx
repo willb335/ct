@@ -9,6 +9,7 @@ import { CT } from './CT';
 import { Scale } from './Scale';
 import { ScaleTooltip } from './ScaleTooltip';
 import { CTTooltip } from './CTTooltip';
+import { Motion } from './Motion';
 
 export interface CurrentTownData {
   [key: string]: string;
@@ -117,8 +118,8 @@ export const App: FunctionComponent = () => {
       <Container>
         <h3>2017 Connecticut Personal Income Tax by Town</h3>
       </Container>
-      <CT data={data} colorScale={colorScale} setCurrentTown={setCurrentTown} />
-
+      {/* <CT data={data} colorScale={colorScale} setCurrentTown={setCurrentTown} /> */}
+      <Motion />
       {currentTown && (
         <ReactTooltip data-for="ct">
           <CTTooltip currentTown={currentTown} formatTown={formatTown} />
